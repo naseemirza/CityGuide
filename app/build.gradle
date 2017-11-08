@@ -14,7 +14,7 @@ android {
         targetSdkVersion 24
         versionCode 2
         versionName "1.1"
-        multiDexEnabled true
+        multiDexEnabled = true
     }
     buildTypes {
         release {
@@ -29,8 +29,8 @@ repositories {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
 
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile('com.github.vajro:MaterialDesignLibrary:1.6') {
         exclude group: 'com.nineoldandroids', module: 'library'
     }

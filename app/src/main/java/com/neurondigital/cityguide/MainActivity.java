@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.android.vending.billing.IabBroadcastReceiver;
@@ -54,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
     Context context;
     AppCompatActivity activity;
 
+    ImageButton button_shopingm,button_homem,button_donatem;
+
     //ad related
     AdView ad;
     LinearLayout BackgroundLayout;
@@ -79,11 +82,51 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
 //        configuration.setLocale(new Locale("fa"));
 //        getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
 
+
+
+
+
+
+
+
+
         setContentView(R.layout.activity_main);
         activity = this;
 
 
         this.context = this;
+
+
+        //footer imagebutton code
+
+        button_shopingm=(ImageButton)findViewById(R.id.imageButton_shpngm);
+        button_homem=(ImageButton)findViewById(R.id.imageButton_homem);
+        button_donatem=(ImageButton)findViewById(R.id.imageButton_donatem);
+
+        button_homem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,HomeScreen.class));
+
+            }
+        });
+
+        button_shopingm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,Shoping.class));
+
+            }
+        });
+
+        button_donatem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,Donate.class));
+
+            }
+        });
+
 
         //portrait only
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -152,6 +195,13 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
                                     startActivity(intent);
                                 }
                                 break;
+
+
+
+
+
+
+
                             case NAV_LOGOUT:
                                 User.logout(context);
                                 break;

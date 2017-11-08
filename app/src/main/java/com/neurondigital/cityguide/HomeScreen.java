@@ -27,10 +27,10 @@ public class HomeScreen extends AppCompatActivity {
 //    AppCompatActivity activity;
     ImageButton button_shoping,button_home,button_donate;
 
-    WebView mywebview;
-    ProgressDialog progressDialog;
+
+
     Button button_search ;
-//    EditText editText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

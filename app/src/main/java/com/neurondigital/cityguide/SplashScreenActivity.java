@@ -135,32 +135,32 @@ public class SplashScreenActivity extends AppCompatActivity {
 
 
         //skip button
-        TextView skipBtn = (TextView) findViewById(R.id.skip_button);
-        skipBtn.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        ((TextView) view).setTextColor(ContextCompat.getColor(activity, R.color.accent)); // white
-                        break;
-                    case MotionEvent.ACTION_CANCEL:
-                        ((TextView) view).setTextColor(0xFFFFFFFF); // lightblack
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        ((TextView) view).setTextColor(0xFFFFFFFF); // lightblack
-                        break;
-                }
-                return false;
-            }
-        });
-        skipBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(activity, HomeScreen.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-        });
+//        TextView skipBtn = (TextView) findViewById(R.id.skip_button);
+//        skipBtn.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View view, MotionEvent motionEvent) {
+//                switch (motionEvent.getAction()) {
+//                    case MotionEvent.ACTION_DOWN:
+//                        ((TextView) view).setTextColor(ContextCompat.getColor(activity, R.color.accent)); // white
+//                        break;
+//                    case MotionEvent.ACTION_CANCEL:
+//                        ((TextView) view).setTextColor(0xFFFFFFFF); // lightblack
+//                        break;
+//                    case MotionEvent.ACTION_UP:
+//                        ((TextView) view).setTextColor(0xFFFFFFFF); // lightblack
+//                        break;
+//                }
+//                return false;
+//            }
+//        });
+//        skipBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(activity, HomeScreen.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                startActivity(intent);
+//            }
+//        });
 
 
         //normal email password login
@@ -174,7 +174,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 User.login(activity, emailView.getText().toString(), passwordView.getText().toString(), new User.onLoginListener() {
                     @Override
                     public void onLogin(String email) {
-                        Intent intent = new Intent(activity, MainActivity.class);
+                        Intent intent = new Intent(activity, HomeScreen.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     }
