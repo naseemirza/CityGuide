@@ -22,7 +22,7 @@ public class Donate extends AppCompatActivity {
         mywebview = (WebView) findViewById(R.id.webView1);
         mywebview.setWebViewClient(new MyWebViewClient());
 
-        String url="https://www.payumoney.com/paybypayumoney/#/7435FB2321DB6A7E1606E5CD5B941CB7";
+        String url="https://www.payumoney.com/paybypayumoney/#/669D9FADCF754B86DA08CFA2BD735FD3";
         mywebview.getSettings().setJavaScriptEnabled(true);
         mywebview.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         mywebview.loadUrl(url);

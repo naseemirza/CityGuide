@@ -29,7 +29,7 @@ public class HomeScreen extends AppCompatActivity {
 
 
 
-    Button button_search ;
+    Button button_search,button_donat ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +48,12 @@ public class HomeScreen extends AppCompatActivity {
 
 
 
+        button_donat=(Button)findViewById(R.id.button_dnt);
         button_search=(Button)findViewById(R.id.btn_search);
 
-        button_shoping=(ImageButton)findViewById(R.id.imageButton_shpng);
-        button_home=(ImageButton)findViewById(R.id.imageButton_home);
-        button_donate=(ImageButton)findViewById(R.id.imageButton_donate);
+       // button_shoping=(ImageButton)findViewById(R.id.imageButton_shpng);
+//        button_home=(ImageButton)findViewById(R.id.imageButton_home);
+        //button_donate=(ImageButton)findViewById(R.id.imageButton_donate);
 
 
 
@@ -63,22 +64,22 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
-        button_home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+//        button_home.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
 
-            }
-        });
+//        button_shoping.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(HomeScreen.this,NewsFragment.class));
+//
+//            }
+//        });
 
-        button_shoping.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomeScreen.this,Shoping.class));
-
-            }
-        });
-
-        button_donate.setOnClickListener(new View.OnClickListener() {
+        button_donat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeScreen.this,Donate.class));

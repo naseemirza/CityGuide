@@ -18,7 +18,7 @@
 
     <!-- Navigation Drawer -->
     <string name="nav_all_places">All Places</string>
-    <string name="nav_news">Blog</string>
+    <string name="nav_news">Update</string>
     <string name="nav_bookmarks">Bookmarked</string>
     <string name="nav_categories">Categories</string>
     <string name="nav_info">Info</string>
@@ -86,7 +86,7 @@
 
     <!-- News/Blog -->
     <string name="back">Back</string>
-    <string name="news">Blog</string>
+    <string name="news">Update</string>
     <string name="photos_count"> {faw-camera} %1$s photos</string>
 
 

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
     Context context;
     AppCompatActivity activity;
 
-    ImageButton button_shopingm,button_homem,button_donatem;
+    ImageButton button_update,button_homem,button_donatem;
 
     //ad related
     AdView ad;
@@ -84,12 +85,7 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
 
 
 
-
-
-
-
-
-
+        
         setContentView(R.layout.activity_main);
         activity = this;
 
@@ -99,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
 
         //footer imagebutton code
 
-        button_shopingm=(ImageButton)findViewById(R.id.imageButton_shpngm);
+        button_update=(ImageButton)findViewById(R.id.imageButton_updt);
         button_homem=(ImageButton)findViewById(R.id.imageButton_homem);
         button_donatem=(ImageButton)findViewById(R.id.imageButton_donatem);
 
@@ -111,10 +107,21 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
             }
         });
 
-        button_shopingm.setOnClickListener(new View.OnClickListener() {
+        button_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,Shoping.class));
+               // startActivity(new Intent(MainActivity.this,Shoping.class));
+
+                NewsFragment  fragment= new NewsFragment();
+
+                android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+                android.support.v4.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+                //android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.mainFragment,fragment); // fragmen container id in first parameter is the  container(Main layout id) of Activity
+                transaction.addToBackStack(null);  // this will manage backstack
+                transaction.commit();
+
 
             }
         });

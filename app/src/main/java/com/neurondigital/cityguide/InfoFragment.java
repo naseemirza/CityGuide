@@ -1,6 +1,7 @@
 package com.neurondigital.cityguide;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageButton;
 
 /**
  * Created by melvin on 08/09/2016.
@@ -20,6 +22,8 @@ public class InfoFragment extends Fragment {
     Context context;
     WebView infoWebview;
     SwipeRefreshLayout swipeLayout;
+
+//    ImageButton button_shopingm,button_homem,button_donatem;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,38 @@ public class InfoFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_info, container, false);
         infoWebview = (WebView) rootView.findViewById(R.id.webview_info);
         swipeLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipeToRefresh);
+
+
+
+//        //footer imagebutton code
+//
+//        button_shopingm=(ImageButton)rootView.findViewById(R.id.imageButton_shpngm);
+//        button_homem=(ImageButton)rootView.findViewById(R.id.imageButton_homem);
+//        button_donatem=(ImageButton)rootView.findViewById(R.id.imageButton_donatem);
+//
+//        button_homem.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getActivity().getApplicationContext(),HomeScreen.class));
+//
+//            }
+//        });
+//
+//        button_shopingm.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getActivity().getApplicationContext(),Shoping.class));
+//
+//            }
+//        });
+//
+//        button_donatem.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getActivity().getApplicationContext(),Donate.class));
+//
+//            }
+//        });
 
         return rootView;
     }

@@ -68,7 +68,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="@string/register_title"
-                    android:textColor="@color/accent"
+                    android:textColor="@color/colorAccent"
                     android:textSize="22sp" />
 
                 <EditText
@@ -107,7 +107,7 @@
                     android:paddingRight="20dp"
                     android:text="@string/register_button"
                     android:textColor="@color/colorWhite"
-                    app:backgroundTint="@color/colorAccent" />
+                    android:backgroundTint="@color/colorAccent" />
 
 
             </LinearLayout>
