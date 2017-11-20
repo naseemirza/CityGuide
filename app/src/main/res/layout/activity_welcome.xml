@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_welcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.neurondigital.cityguide.WelcomeActivity">
+
+
+    <TextView
+        android:text="Welcome To"
+        android:textColor="@color/bgTitleRight"
+        android:textSize="30dp"
+        android:textStyle="bold|italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="151dp"
+        android:id="@+id/textView" />
+
+    <ImageView
+
+        android:src="@drawable/sahaj"
+        android:id="@+id/simage"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:scaleType="center"
+        android:layout_marginTop="62dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Powered By:"
+        android:textColor="@color/bgTitleRight"
+        android:textStyle="italic"
+        android:textSize="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/simage"
+        android:layout_alignEnd="@+id/simage"
+        android:layout_marginBottom="60dp"
+        android:id="@+id/textView4" />
+
+    <TextView
+        android:text="Shark Media"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:id="@+id/textView6"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+
+</RelativeLayout>

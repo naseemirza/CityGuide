@@ -17,4 +17,54 @@
 
     </WebView>
 
+    <RelativeLayout
+        android:background="@color/bgTitleRight"
+        android:id="@+id/relativeLayoutBackbtn"
+        android:layout_width="match_parent"
+
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+        <!--<TextView-->
+            <!--android:text="Home"-->
+            <!--android:textColor="@color/facebook_color"-->
+            <!--android:textSize="15dp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_marginBottom="1dp"-->
+            <!--android:layout_marginLeft="77dp"-->
+            <!--android:layout_marginStart="20dp"-->
+            <!--android:id="@+id/texthome" />-->
+
+        <!--<ImageButton-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:src="@drawable/honenew"-->
+            <!--android:id="@+id/imageButton_hm"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_alignRight="@+id/texthome"-->
+            <!--android:layout_alignEnd="@+id/texthome"-->
+            <!--android:layout_alignLeft="@+id/texthome"-->
+            <!--android:layout_alignStart="@+id/texthome" />-->
+
+        <Button
+            android:text="Back To Home"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23dp"
+            android:id="@+id/button_hm" />
+    </RelativeLayout>
+
 </RelativeLayout>

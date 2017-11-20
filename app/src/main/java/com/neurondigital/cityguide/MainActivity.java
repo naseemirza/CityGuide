@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
     Context context;
     AppCompatActivity activity;
 
-    ImageButton button_update,button_homem,button_donatem;
+    ImageButton button_update,button_homem,button_donatem,button_blg;
 
     //ad related
     AdView ad;
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
 
 
 
-        
+
         setContentView(R.layout.activity_main);
         activity = this;
 
@@ -95,9 +95,29 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
 
         //footer imagebutton code
 
+        button_blg=(ImageButton)findViewById(R.id.imageButton_blog);
         button_update=(ImageButton)findViewById(R.id.imageButton_updt);
         button_homem=(ImageButton)findViewById(R.id.imageButton_homem);
         button_donatem=(ImageButton)findViewById(R.id.imageButton_donatem);
+
+
+        button_blg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                NewsFragment  fragment= new NewsFragment();
+
+                android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+                android.support.v4.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+                //android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                changeFragment(fragment);
+                transaction.replace(R.id.mainFragment,fragment); // fragmen container id in first parameter is the  container(Main layout id) of Activity
+                transaction.addToBackStack(null);  // this will manage backstack
+                transaction.commit();
+
+            }
+        });
 
         button_homem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +137,7 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
                 android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
                 android.support.v4.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
 
+                changeFragment(fragment);
                 //android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.mainFragment,fragment); // fragmen container id in first parameter is the  container(Main layout id) of Activity
                 transaction.addToBackStack(null);  // this will manage backstack
@@ -357,51 +378,51 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
         //TODO: You can change the order of the items in the Side Navigation Bar from here
 
         //Add Home, Top Stories and Bookmarks
-        drawerItems.add(new PrimaryDrawerItem().withIdentifier(NAV_HOME).withName(R.string.nav_all_places).withIcon(FontAwesome.Icon.faw_map_marker));
-        if (Configurations.ENABLE_NEWS)
-            drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_NEWS).withName(R.string.nav_news).withIcon(FontAwesome.Icon.faw_newspaper_o));
-        drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_BOOKMARKED).withName(R.string.nav_bookmarks).withIcon(FontAwesome.Icon.faw_bookmark_o));
+//        drawerItems.add(new PrimaryDrawerItem().withIdentifier(NAV_HOME).withName(R.string.nav_all_places).withIcon(FontAwesome.Icon.faw_map_marker));
+//        if (Configurations.ENABLE_NEWS)
+//            drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_NEWS).withName(R.string.nav_news).withIcon(FontAwesome.Icon.faw_newspaper_o));
+//        drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_BOOKMARKED).withName(R.string.nav_bookmarks).withIcon(FontAwesome.Icon.faw_bookmark_o));
 
         //Topics
-        if (Configurations.DISPLAY_CATEGORIES_IN_NAVIGATION_DRAWER) {
-            //Add categories and more...
-            drawerItems.add(new SectionDrawerItem().withName(R.string.nav_categories));
-            if (categories != null) {
-                for (int i = 0; i < categories.size(); i++) {
-                    if (i < Configurations.CATEGORIES_TO_SHOW_IN_NAVIGATION_DRAWER) {
-                        PrimaryDrawerItem temp = new SecondaryDrawerItem().withIdentifier(NAV_CATEGORIES + categories.get(i).id).withName(categories.get(i).name);
-                        drawerItems.add(temp);
-                        if (Configurations.SHOW_CATEGORIES_ICONS) {
-                            if (categories.get(i).icon.length() > 3) {
-                                String iconName = categories.get(i).icon.substring(3, categories.get(i).icon.length());
-                                String iconNameUnderscore = iconName.replaceAll("-", "_");
-                                String icon = "faw_" + iconNameUnderscore;
-                                temp.withIcon(FontAwesome.Icon.valueOf(icon));
-                            }
-                        }
-                    }
-                }
-            }
-            if (Configurations.SHOW_CATEGORIES_ICONS)
-                drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_MORE).withName(R.string.nav_categories_more).withIcon(FontAwesome.Icon.faw_ellipsis_h));
-            else
-                drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_MORE).withName(R.string.nav_categories_more));
-
-            drawerItems.add(new DividerDrawerItem());
-        } else {
-            //add just a categories button
-            drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_MORE).withName(R.string.nav_categories).withIcon(FontAwesome.Icon.faw_bars));
-        }
+//        if (Configurations.DISPLAY_CATEGORIES_IN_NAVIGATION_DRAWER) {
+//            //Add categories and more...
+//            drawerItems.add(new SectionDrawerItem().withName(R.string.nav_categories));
+//            if (categories != null) {
+//                for (int i = 0; i < categories.size(); i++) {
+//                    if (i < Configurations.CATEGORIES_TO_SHOW_IN_NAVIGATION_DRAWER) {
+//                        PrimaryDrawerItem temp = new SecondaryDrawerItem().withIdentifier(NAV_CATEGORIES + categories.get(i).id).withName(categories.get(i).name);
+//                        drawerItems.add(temp);
+//                        if (Configurations.SHOW_CATEGORIES_ICONS) {
+//                            if (categories.get(i).icon.length() > 3) {
+//                                String iconName = categories.get(i).icon.substring(3, categories.get(i).icon.length());
+//                                String iconNameUnderscore = iconName.replaceAll("-", "_");
+//                                String icon = "faw_" + iconNameUnderscore;
+//                                temp.withIcon(FontAwesome.Icon.valueOf(icon));
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//            if (Configurations.SHOW_CATEGORIES_ICONS)
+//                drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_MORE).withName(R.string.nav_categories_more).withIcon(FontAwesome.Icon.faw_ellipsis_h));
+//            else
+//                drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_MORE).withName(R.string.nav_categories_more));
+//
+//            drawerItems.add(new DividerDrawerItem());
+//        } else {
+//            //add just a categories button
+//            drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_MORE).withName(R.string.nav_categories).withIcon(FontAwesome.Icon.faw_bars));
+//        }
 
         //add final 4 items
         if (Configurations.ENABLE_USER_SYSTEM)
             drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_PROFILE).withName(R.string.profile_title).withIcon(FontAwesome.Icon.faw_user));
-        drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_INFO).withName(R.string.nav_info).withIcon(FontAwesome.Icon.faw_question));
+        //drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_INFO).withName(R.string.nav_info).withIcon(FontAwesome.Icon.faw_question));
         if (Configurations.PUBLIC_KEY.length() > 0) {
-            if (!BillingHelper.isPremium(context))
-                drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_PREMIUM).withName(R.string.nav_go_premium).withIcon(FontAwesome.Icon.faw_money));
+//            if (!BillingHelper.isPremium(context))
+//                drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_PREMIUM).withName(R.string.nav_go_premium).withIcon(FontAwesome.Icon.faw_money));
         }
-        drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAVSETTINGS).withName(R.string.nav_settings).withIcon(FontAwesome.Icon.faw_cog));
+       // drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAVSETTINGS).withName(R.string.nav_settings).withIcon(FontAwesome.Icon.faw_cog));
         if (Configurations.ENABLE_USER_SYSTEM)
             drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_LOGOUT).withName(R.string.nav_logout).withIcon(FontAwesome.Icon.faw_sign_out));
 

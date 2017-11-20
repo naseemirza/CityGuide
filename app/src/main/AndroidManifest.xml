@@ -20,7 +20,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".WelcomeActivity"
             android:hardwareAccelerated="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".HomeScreen"
             android:hardwareAccelerated="true">
             <meta-data
                 android:name="android.app.searchable"
@@ -158,12 +158,13 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeScreen" />
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".HomeSearch"
             android:theme="@style/AppTheme" />
         <activity android:name=".Shoping" />
-        <activity android:name=".Donate"></activity>
+        <activity android:name=".Donate" />
+        <activity android:name=".SplashScreenActivity"></activity>
     </application>
 
 </manifest>
