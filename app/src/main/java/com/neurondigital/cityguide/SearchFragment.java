@@ -335,12 +335,12 @@ public class SearchFragment extends Fragment {
                     }
                 });
                 return true;
-            case R.id.sort_rating:
-                filterParams.remove("currentlat");
-                filterParams.remove("currentlng");
-                filterParams.put("sort", "avgrating");
-                refresh();
-                return true;
+//            case R.id.sort_rating:
+//                filterParams.remove("currentlat");
+//                filterParams.remove("currentlng");
+//                filterParams.put("sort", "avgrating");
+//                refresh();
+//                return true;
             case R.id.sort_recent:
                 filterParams.remove("currentlat");
                 filterParams.remove("currentlng");

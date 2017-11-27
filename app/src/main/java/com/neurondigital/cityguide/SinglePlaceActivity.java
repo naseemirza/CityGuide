@@ -211,7 +211,7 @@ public class SinglePlaceActivity extends AppCompatActivity {
 
         //rating
         //star container
-        LinearLayout starContainer = (LinearLayout) findViewById(R.id.star_container);
+        //LinearLayout starContainer = (LinearLayout) findViewById(R.id.star_container);
         Typeface iconFont = FontManager.getTypeface(activity, FONTAWESOME);
 
         //star margin
@@ -248,7 +248,7 @@ public class SinglePlaceActivity extends AppCompatActivity {
                     }
                 }
             });
-            starContainer.addView(stars[i]);
+            //starContainer.addView(stars[i]);
         }
 
 

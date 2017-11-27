@@ -99,10 +99,10 @@ public class InfoFragment extends Fragment {
         });
         //enable javascript
         infoWebview.getSettings().setJavaScriptEnabled(true);
-       // infoWebview.clearCache(false);
-        //infoWebview.getSettings().setMinimumFontSize((int) getResources().getDimension(R.dimen.webviewMinTextSize));
-        //infoWebview.getSettings().setBuiltInZoomControls(true);
-        //infoWebview.getSettings().setDisplayZoomControls(false);
+        infoWebview.clearCache(false);
+        infoWebview.getSettings().setMinimumFontSize((int) getResources().getDimension(R.dimen.webviewMinTextSize));
+        infoWebview.getSettings().setBuiltInZoomControls(true);
+        infoWebview.getSettings().setDisplayZoomControls(false);
 
 
     }

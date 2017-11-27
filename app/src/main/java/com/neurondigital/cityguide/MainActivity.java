@@ -132,16 +132,16 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
             public void onClick(View view) {
                // startActivity(new Intent(MainActivity.this,Shoping.class));
 
-                NewsFragment  fragment= new NewsFragment();
-
-                android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-                android.support.v4.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
-
-                changeFragment(fragment);
-                //android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.mainFragment,fragment); // fragmen container id in first parameter is the  container(Main layout id) of Activity
-                transaction.addToBackStack(null);  // this will manage backstack
-                transaction.commit();
+//                NewsFragment  fragment= new NewsFragment();
+//
+//                android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+//                android.support.v4.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
+//
+//                changeFragment(fragment);
+//                //android.app.FragmentTransaction transaction = getFragmentManager().beginTransaction();
+//                transaction.replace(R.id.mainFragment,fragment); // fragmen container id in first parameter is the  container(Main layout id) of Activity
+//                transaction.addToBackStack(null);  // this will manage backstack
+//                transaction.commit();
 
 
             }
@@ -184,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
-                        //On click: open the required activity or fragment
+                        //On click: open the req    uired activity or fragment
                         Intent intent;
                         switch ((int) drawerItem.getIdentifier()) {
                             case NAV_HOME:
@@ -200,7 +200,9 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
                                 changeFragment(new BookmarkFragment());
                                 break;
                             case NAV_INFO:
-                                changeFragment(new InfoFragment());
+                                //changeFragment(new ContactUsFragmnt());
+                                intent=new Intent(context,ContactUs.class);
+                                startActivity(intent);
                                 break;
                             case NAV_PREMIUM:
                                 intent = new Intent(context, PremiumActivity.class);
@@ -417,7 +419,7 @@ public class MainActivity extends AppCompatActivity implements IabBroadcastRecei
         //add final 4 items
         if (Configurations.ENABLE_USER_SYSTEM)
             drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_PROFILE).withName(R.string.profile_title).withIcon(FontAwesome.Icon.faw_user));
-        //drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_INFO).withName(R.string.nav_info).withIcon(FontAwesome.Icon.faw_question));
+        drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_INFO).withName(R.string.nav_info).withIcon(FontAwesome.Icon.faw_question));
         if (Configurations.PUBLIC_KEY.length() > 0) {
 //            if (!BillingHelper.isPremium(context))
 //                drawerItems.add(new SecondaryDrawerItem().withIdentifier(NAV_PREMIUM).withName(R.string.nav_go_premium).withIcon(FontAwesome.Icon.faw_money));

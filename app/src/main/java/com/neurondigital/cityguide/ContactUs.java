@@ -8,26 +8,23 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class Shoping extends AppCompatActivity {
-
+public class ContactUs extends AppCompatActivity {
     WebView mywebview;
     ProgressDialog progressDialog;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shoping);
+        setContentView(R.layout.activity_contact_us);
 
         mywebview = (WebView) findViewById(R.id.webView1);
         mywebview.setWebViewClient(new MyWebViewClient());
 
-        String url="http://sahajyoga.in/shop/";
+        String url="http://sahajyoga.in/contact/contact.html";
         mywebview.getSettings().setJavaScriptEnabled(true);
         mywebview.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         mywebview.loadUrl(url);
     }
-
-    protected class MyWebViewClient extends WebViewClient {
+    private class MyWebViewClient extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             view.loadUrl(url);
@@ -37,7 +34,7 @@ public class Shoping extends AppCompatActivity {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
-            progressDialog = new ProgressDialog(Shoping.this);
+            progressDialog = new ProgressDialog(ContactUs.this);
             progressDialog.setMessage("Please wait ...");
             progressDialog.setProgressStyle(90);
             progressDialog.show();

@@ -58,7 +58,7 @@ public class MapPlaceAdapter extends RecyclerView.Adapter<ViewHolder> {
             name = (TextView) itemView.findViewById(R.id.name);
             // price_suffix = (TextView) itemView.findViewById(R.id.price_suffix);
             //  price = (TextView) itemView.findViewById(R.id.price);
-            rating = (IconicsTextView) itemView.findViewById(R.id.rating);
+//            rating = (IconicsTextView) itemView.findViewById(R.id.rating);
             reviews = (TextView) itemView.findViewById(R.id.reviews);
             //  distance = (TextView) itemView.findViewById(R.id.distance);
 
@@ -115,7 +115,7 @@ public class MapPlaceAdapter extends RecyclerView.Adapter<ViewHolder> {
                 rating += "{faw-star}";
             }
         }
-        ((PropertyViewHolder) propertyViewHolder).rating.setText(rating);
+       // ((PropertyViewHolder) propertyViewHolder).rating.setText(rating);
 
         ((PropertyViewHolder) propertyViewHolder).reviews.setText("(" + places.get(i).totalratings + " Ratings)");
 

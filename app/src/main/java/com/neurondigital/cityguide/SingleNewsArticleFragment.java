@@ -128,16 +128,16 @@ public class SingleNewsArticleFragment extends Fragment {
         ItemId = getArguments().getInt(SingleNewsArticleActivity.ITEM_KEY);
 
         //comment button
-        final Button commentsBtn = (Button) contentView.findViewById(R.id.commentsBtn);
-        commentsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // launching Facebook comments activity
-                Intent intent = new Intent(getActivity(), CommentsActivity.class);
-                intent.putExtra("url", "http://" + getResources().getString(R.string.deep_link) + "/" + ItemId);
-                startActivity(intent);
-            }
-        });
+//       // final Button commentsBtn = (Button) contentView.findViewById(R.id.commentsBtn);
+//        commentsBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // launching Facebook comments activity
+//                Intent intent = new Intent(getActivity(), CommentsActivity.class);
+//                intent.putExtra("url", "http://" + getResources().getString(R.string.deep_link) + "/" + ItemId);
+//                startActivity(intent);
+//            }
+//        });
 
         //load article
         NewsArticle.loadSingle(getActivity(), ItemId, new NewsArticle.onDownloadedListener() {
@@ -162,10 +162,10 @@ public class SingleNewsArticleFragment extends Fragment {
                     String DateToStr = PrettyTime.getTimeAgo(newsArticle.submission_date, "yyyy-MM-dd HH:mm:ss", getActivity());
                     dateView.setText(DateToStr + author);
 
-                    if (newsArticle.allowComments == 1)
-                        commentsBtn.setVisibility(View.VISIBLE);
-                    else
-                        commentsBtn.setVisibility(View.GONE);
+                    //if (newsArticle.allowComments == 1)
+                       // commentsBtn.setVisibility(View.VISIBLE);
+                    //else
+                        //commentsBtn.setVisibility(View.GONE);
 
 
 

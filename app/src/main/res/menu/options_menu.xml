@@ -21,9 +21,9 @@
             <item
                 android:id="@+id/sort_recent"
                 android:title="@string/menu_sort_recent" />
-            <item
-                android:id="@+id/sort_rating"
-                android:title="@string/menu_sort_rating" />
+            <!--<item-->
+                <!--android:id="@+id/sort_rating"-->
+                <!--android:title="@string/menu_sort_rating" />-->
             <item
                 android:id="@+id/sort_distance"
                 android:title="@string/menu_sort_distance" />

@@ -67,8 +67,8 @@ public class PlaceAdapter extends RecyclerView.Adapter<ViewHolder> {
             name = (TextView) itemView.findViewById(R.id.name);
             price_suffix = (TextView) itemView.findViewById(R.id.price_suffix);
             price = (TextView) itemView.findViewById(R.id.price);
-            rating = (IconicsTextView) itemView.findViewById(R.id.rating);
-            reviews = (TextView) itemView.findViewById(R.id.reviews);
+//            rating = (IconicsTextView) itemView.findViewById(R.id.rating);
+            //reviews = (TextView) itemView.findViewById(R.id.reviews);
             distance = (TextView) itemView.findViewById(R.id.distance);
             featured = (LinearLayout) itemView.findViewById(R.id.featured);
 
@@ -127,23 +127,23 @@ public class PlaceAdapter extends RecyclerView.Adapter<ViewHolder> {
             ((PlaceViewHolder) viewHolder).featured.setVisibility(View.GONE);
         }
 
-        String rating = "";
-        if (places.get(i).totalratings > 0) {
-            for (int s = 0; s <= places.get(i).avgrating - 1; s++) {
-                rating += "{faw-star}";
-            }
-        } else {
-            for (int s = 0; s <= Configurations.DEFAULT_PLACE_RATING - 1; s++) {
-                rating += "{faw-star}";
-            }
-        }
-
-        ((PlaceViewHolder) viewHolder).rating.setText(rating);
+//        String rating = "";
+//        if (places.get(i).totalratings > 0) {
+//            for (int s = 0; s <= places.get(i).avgrating - 1; s++) {
+//                rating += "{faw-star}";
+//            }
+//        } else {
+//            for (int s = 0; s <= Configurations.DEFAULT_PLACE_RATING - 1; s++) {
+//                rating += "{faw-star}";
+//            }
+//        }
+//
+//        ((PlaceViewHolder) viewHolder).rating.setText(rating);
 
         if (Configurations.LIST_MENU_TYPE == Configurations.LIST_1COLUMNS) {
-            ((PlaceViewHolder) viewHolder).reviews.setText("(" + places.get(i).totalratings + " Ratings)");
+            //((PlaceViewHolder) viewHolder).reviews.setText("(" + places.get(i).totalratings + " Ratings)");
         } else {
-            ((PlaceViewHolder) viewHolder).reviews.setText("(" + places.get(i).totalratings + ")");
+            //((PlaceViewHolder) viewHolder).reviews.setText("(" + places.get(i).totalratings + ")");
         }
         DecimalFormat distanceFormat = new DecimalFormat("####,###,###.##");
         if (gpslocation.hasPermission()) {

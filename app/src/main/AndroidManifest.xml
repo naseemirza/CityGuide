@@ -162,9 +162,9 @@
         <activity
             android:name=".HomeSearch"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Shoping" />
         <activity android:name=".Donate" />
-        <activity android:name=".SplashScreenActivity"></activity>
+        <activity android:name=".SplashScreenActivity" />
+        <activity android:name=".ContactUs"></activity>
     </application>
 
 </manifest>

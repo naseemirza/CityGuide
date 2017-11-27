@@ -47,18 +47,18 @@
             android:textColor="@color/colorText"
             android:textSize="14sp" />
 
-        <Button
-            android:visibility="gone"
-            android:layout_margin="30dp"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:textAllCaps="true"
-            android:textColor="@color/md_white_1000"
-            android:background="@color/accent"
-            android:id="@+id/commentsBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/comments" />
+        <!--<Button-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_margin="30dp"-->
+            <!--android:textSize="14sp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textAllCaps="true"-->
+            <!--android:textColor="@color/md_white_1000"-->
+            <!--android:background="@color/accent"-->
+            <!--android:id="@+id/commentsBtn"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/comments" />-->
 
 
     </LinearLayout>
